@@ -1,0 +1,5 @@
+black
+google-genai
+pydantic
+python-dotenv
+streamlit
