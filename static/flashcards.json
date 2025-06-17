@@ -1,0 +1,42 @@
+[
+  {
+    "question": "What is the primary goal of cryptography?",
+    "answer": "Cryptography aims to construct and analyze protocols to prevent unauthorized access to private messages."
+  },
+  {
+    "question": "Which disciplines intersect with modern cryptography?",
+    "answer": "Modern cryptography combines mathematics, computer science, information security, electrical engineering, and others."
+  },
+  {
+    "question": "What are the core concepts central to cryptography?",
+    "answer": "Data confidentiality, data integrity, authentication, and non-repudiation are central to cryptography."
+  },
+  {
+    "question": "What is the historical synonym for cryptography?",
+    "answer": "Prior to modern times, cryptography was synonymous with encryption."
+  },
+  {
+    "question": "Who are Alice, Bob, and Eve in cryptography?",
+    "answer": "Alice is the sender, Bob is the intended recipient, and Eve is the eavesdropping adversary."
+  },
+  {
+    "question": "What are the two main types of cryptosystems?",
+    "answer": "The two main types of cryptosystems are symmetric and asymmetric systems."
+  },
+  {
+    "question": "What is the main advantage of asymmetric systems?",
+    "answer": "Asymmetric systems' public key can be freely published, enabling secure communication without a shared secret key."
+  },
+  {
+    "question": "What are some examples of asymmetric systems?",
+    "answer": "Examples of asymmetric systems include Diffie\u2013Hellman key exchange, RSA, ECC, and Post-quantum cryptography."
+  },
+  {
+    "question": "What is the difference between a cipher and a code in cryptography?",
+    "answer": "A cipher changes elements below a word level, whereas a code replaces entire words or phrases."
+  },
+  {
+    "question": "What is the focus of cryptanalysis?",
+    "answer": "Cryptanalysis studies methods for obtaining the meaning of encrypted information without the key."
+  }
+]

@@ -1,0 +1,11 @@
+Number,Question,Answer
+1,What is the primary goal of cryptography?,Cryptography aims to construct and analyze protocols to prevent unauthorized access to private messages.
+2,Which disciplines intersect with modern cryptography?,"Modern cryptography combines mathematics, computer science, information security, electrical engineering, and others."
+3,What are the core concepts central to cryptography?,"Data confidentiality, data integrity, authentication, and non-repudiation are central to cryptography."
+4,What is the historical synonym for cryptography?,"Prior to modern times, cryptography was synonymous with encryption."
+5,"Who are Alice, Bob, and Eve in cryptography?","Alice is the sender, Bob is the intended recipient, and Eve is the eavesdropping adversary."
+6,What are the two main types of cryptosystems?,The two main types of cryptosystems are symmetric and asymmetric systems.
+7,What is the main advantage of asymmetric systems?,"Asymmetric systems' public key can be freely published, enabling secure communication without a shared secret key."
+8,What are some examples of asymmetric systems?,"Examples of asymmetric systems include Diffie-Hellman key exchange, RSA, ECC, and Post-quantum cryptography."
+9,What is the difference between a cipher and a code in cryptography?,"A cipher changes elements below a word level, whereas a code replaces entire words or phrases."
+10,What is the focus of cryptanalysis?,Cryptanalysis studies methods for obtaining the meaning of encrypted information without the key.
