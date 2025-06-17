@@ -15,15 +15,13 @@ class Card(BaseModel):
 
 
 difficulty_matrix = {
-    "easy" : "one word",
-    "medium" : "a short phrase",
-    "hard" : "6-7 lines long paragraph",
+    "easy": "one word",
+    "medium": "a short phrase",
+    "hard": "6-7 lines long paragraph",
 }
 
 
 def get_response(input_text, difficulty, subject, amount):
-    
-    print(input_text, difficulty, subject, amount)
 
     response = client.models.generate_content(
         model="gemini-2.0-flash-lite",
@@ -46,17 +44,14 @@ def get_response(input_text, difficulty, subject, amount):
             response_mime_type="application/json",
             response_schema=list[Card],
         ),
-        contents = f"Generate {amount} flashcards of {difficulty} difficulty, subject related to {subject}, in {difficulty_matrix[difficulty.lower()]}." + input_text,
+        contents=f"Generate {amount} flashcards of {difficulty} difficulty, subject related to {subject}, in {difficulty_matrix[difficulty.lower()]}."
+        + input_text,
     )
-
-    print(listify(response.text))
-    
     return listify(response.text)
 
 
 def listify(json_output):
     data = json.loads(json_output)
-    print(type(data))
     return data
 
 
@@ -65,22 +60,21 @@ def custom_css():
 <style>
     /* Navigation bar styling */
     .navbar {
-        background: linear-gradient(90deg, #585e4c 0%, #425e3e 100%);
-        padding: 1rem 2rem;
         border-radius: 10px;
-        margin-bottom: 2rem;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    
+   
     .navbar h1 {
-        color: white;
         text-align: center;
         margin: 0;
         font-size: 2.5rem;
         font-weight: 700;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
-    
+   
+    .spinner > div {
+        border-top-color: #555500; 
+    }
     /* Flashcard styling */
     .flashcard {
         background: white;
@@ -90,7 +84,7 @@ def custom_css():
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
         cursor: pointer;
         transition: all 0.3s ease;
-        border: 2px solid #e0e0e0;
+        border: 2px solid #6fff7f;
         min-height: 200px;
         display: flex;
         align-items: center;
@@ -99,29 +93,31 @@ def custom_css():
         position: relative;
         overflow: hidden;
     }
-    
+   
     .flashcard:hover {
         transform: translateY(-5px);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-        border-color: #667eea;
+        border-color: #93f59e;
     }
-    
+   
     .flashcard-front {
-        background: linear-gradient(135deg, #756d39 0%, #756139 100%);
+        background: linear-gradient(135deg, #33092d 0%, #4a295a 100%);
         color: white;
+        border-color: #8756a3;
     }
-    
+   
     .flashcard-back {
-        background: linear-gradient(135deg, #185434 0%, #205418 100%);
-        color: white;
+        background: linear-gradient(135deg, #33092d 0%, #4a295a 100%);
+        color: #93f59ee;
+        border-color: #8756a3;
     }
-    
+   
     .flashcard-content {
         font-size: 1.1rem;
         line-height: 1.6;
         font-weight: 500;
     }
-    
+   
     .flashcard-label {
         position: absolute;
         top: 10px;
@@ -133,7 +129,7 @@ def custom_css():
         font-weight: 600;
         text-transform: uppercase;
     }
-    
+   
     /* Generate button styling */
     .stButton > button {
         background: linear-gradient(90deg, #585e4c 0%, #425e3e 100%);
@@ -146,31 +142,34 @@ def custom_css():
         transition: all 0.3s ease;
         width: 100%;
     }
-    
+   
     .stButton > button:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-        color: #FFFF00;
     }
-
     .stButton > button:hover:active {
         transform: translateY(-2px);
         box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3);
-        color: #FFFF00;
+        color: #93f59e;
     }
-    
+   
     /* Input field styling */
     .stTextArea textarea {
         border-radius: 10px;
         border: 2px solid #e0e0e0;
         transition: border-color 0.3s ease;
+        box-sizing: border-box;
     }
-    
+
     .stTextArea textarea:focus {
         border-color: #667eea;
         box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
     }
-    
+
+    .stMarkdown h3 {
+        font-size: 10rem !important;
+    }
+   
     /* Loading animation */
     .loading {
         display: flex;
@@ -178,16 +177,16 @@ def custom_css():
         align-items: center;
         padding: 2rem;
     }
-    
+   
     .spinner {
-        border: 4px solid #f3f3f3;
-        border-top: 4px solid #667eea;
+        border: 4px solid #ff0000;
+        border-top: 4px solid #0000ff;
         border-radius: 50%;
         width: 40px;
         height: 40px;
         animation: spin 1s linear infinite;
     }
-    
+   
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
