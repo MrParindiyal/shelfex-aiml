@@ -1,0 +1,21 @@
+[server]
+runOnSave = true
+fileWatcherType = "auto"
+enableStaticServing = true
+
+[theme]
+base="dark"
+primaryColor="#6fff7f"
+backgroundColor="#300a24"
+secondaryBackgroundColor="#390b33"
+textColor = "#6fff7f"
+linkColor = "#62C1E5"
+borderColor = "#6fffb7"
+showWidgetBorder = true
+baseRadius = "0.75rem"
+codeBackgroundColor = "#ff0000"
+
+[theme.sidebar]
+backgroundColor = "#390b33"
+secondaryBackgroundColor = "#44475a"
+textColor = "#7fdf9f"
